@@ -15,6 +15,7 @@ module.exports = {
   rules: {
     'react/jsx-filename-extension': [0],
     'object-curly-newline': 'off',
-    'react/jsx-closing-bracket-location': 'off'
+    'react/jsx-closing-bracket-location': 'off',
+    'comma-dangle': 'off'
   }
 };
