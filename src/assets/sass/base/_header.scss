@@ -1,0 +1,71 @@
+.header {
+  max-width: 100%;
+  position: relative;
+  background: transparent;
+  height: 85px;
+  display: flex;
+  z-index: 5;
+  align-items: center;
+
+  nav {
+    width: 100%;
+    display: flex;
+    flex: 1;
+
+    ul {
+      width: calc(100% - 80px);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 1rem 5rem 1rem 1rem;
+    }
+  }
+
+  &--item {
+    display: inline-block;
+
+    .username {
+      margin: 0;
+      padding: 0;
+    }
+
+    .auth {
+      cursor: pointer;
+
+      &:hover {
+        color: wheat !important;
+      }
+    }
+  }
+
+  &--cart {
+    position: relative;
+    svg {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+    }
+
+    .badge {
+      position: absolute;
+      top: 0;
+      font-size: 1.1rem;
+    }
+  }
+
+  &--link {
+    font-size: 1.5rem;
+  }
+
+  &--item:not(:last-child) {
+    margin-right: 12px;
+  }
+
+  &--logo {
+    width: 80px;
+    padding: 1rem;
+    a {
+      font-size: 1.7rem;
+    }
+  }
+}
