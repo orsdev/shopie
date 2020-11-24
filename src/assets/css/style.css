@@ -141,5 +141,23 @@
     margin-bottom: 20px;
   }
 }
+.banner {
+  padding: 80px 2rem;
+  background: rgba(13, 46, 58, 0.9);
+  margin-top: 50px;
+}
+.banner--text {
+  font-size: 1.7rem;
+  width: 500px;
+}
+.banner--btn {
+  font-size: 1.8rem;
+}
+
+@media (max-width: 610px) {
+  .banner--text {
+    width: 90%;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
