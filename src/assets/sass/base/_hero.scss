@@ -37,3 +37,18 @@
     }
   }
 }
+
+@media (max-width: 600px) {
+  .hero {
+    &--body {
+      h2.display-3 {
+        width: 90%;
+        font-size: 3.5rem;
+      }
+
+      p {
+        width: 85%;
+      }
+    }
+  }
+}

@@ -43,6 +43,8 @@
 }
 .header--item .auth {
   cursor: pointer;
+  margin: 0;
+  padding: 0;
 }
 .header--item .auth:hover {
   color: wheat !important;
@@ -103,6 +105,16 @@
   width: 120px;
   height: 40px;
   font-size: 1.8rem;
+}
+
+@media (max-width: 600px) {
+  .hero--body h2.display-3 {
+    width: 90%;
+    font-size: 3.5rem;
+  }
+  .hero--body p {
+    width: 85%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
