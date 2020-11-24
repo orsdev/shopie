@@ -129,4 +129,17 @@
   object-fit: contain;
 }
 
+@media (max-width: 767px) {
+  .categories-card {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .categories-card .card:first-child {
+    margin-bottom: 20px;
+  }
+  .categories-card .card:nth-child(2) {
+    margin-bottom: 20px;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
