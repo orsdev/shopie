@@ -1,3 +1,108 @@
+.loading-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  z-index: 20;
+  background-color: rgba(13, 46, 58, 0.8);
+}
+.loading-screen p {
+  font-size: 4rem;
+}
 
+.header {
+  max-width: 100%;
+  position: relative;
+  background: transparent;
+  height: 85px;
+  display: flex;
+  z-index: 5;
+  align-items: center;
+}
+.header nav {
+  width: 100%;
+  display: flex;
+  flex: 1;
+}
+.header nav ul {
+  width: calc(100% - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1rem 5rem 1rem 1rem;
+}
+.header--item {
+  display: inline-block;
+}
+.header--item .username {
+  margin: 0;
+  padding: 0;
+}
+.header--item .auth {
+  cursor: pointer;
+}
+.header--item .auth:hover {
+  color: wheat !important;
+}
+.header--cart {
+  position: relative;
+}
+.header--cart svg {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+.header--cart .badge {
+  position: absolute;
+  top: 0;
+  font-size: 1.1rem;
+}
+.header--link {
+  font-size: 1.5rem;
+}
+.header--item:not(:last-child) {
+  margin-right: 12px;
+}
+.header--logo {
+  width: 80px;
+  padding: 1rem;
+}
+.header--logo a {
+  font-size: 1.7rem;
+}
+
+.hero {
+  position: relative;
+  top: -85px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: linear-gradient(to left, rgba(13, 46, 58, 0.7), rgba(13, 46, 58, 0.7)), url(../../assets/images/main-bg.jpg);
+  height: 640px;
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.hero--body {
+  width: 90%;
+  margin: auto;
+}
+.hero--body h2 {
+  width: 500px;
+}
+.hero--body p {
+  font-size: 1.8rem;
+  width: 400px;
+}
+.hero--body button {
+  width: 120px;
+  height: 40px;
+  font-size: 1.8rem;
+}
 
 /*# sourceMappingURL=style.css.map */
