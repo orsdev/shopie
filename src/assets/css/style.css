@@ -116,5 +116,17 @@
     width: 85%;
   }
 }
+.categories-card {
+  width: 90%;
+  margin: 0 auto;
+}
+.categories-card .card {
+  height: 300px;
+}
+.categories-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+}
 
 /*# sourceMappingURL=style.css.map */

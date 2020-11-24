@@ -1,0 +1,15 @@
+.categories-card {
+  width: 90%;
+  margin: 0 auto;
+
+  .card {
+    height: 300px;
+  }
+
+  img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    // height: 350px;
+  }
+}
