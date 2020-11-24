@@ -1,0 +1,39 @@
+.hero {
+  position: relative;
+  top: -85px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: linear-gradient(
+      to left,
+      rgba(13, 46, 58, 0.7),
+      rgba(13, 46, 58, 0.7)
+    ),
+    url(../../assets/images/main-bg.jpg);
+  height: 640px;
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+
+  &--body {
+    width: 90%;
+    margin: auto;
+
+    h2 {
+      width: 500px;
+    }
+
+    p {
+      font-size: 1.8rem;
+      width: 400px;
+    }
+
+    button {
+      width: 120px;
+      height: 40px;
+      font-size: 1.8rem;
+    }
+  }
+}
