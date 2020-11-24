@@ -1,6 +1,7 @@
 import React from 'react';
 import Banner from '../components/banner';
 import CategoriesCard from '../components/categories-card';
+import Footer from '../components/footer';
 import Hero from '../components/hero';
 
 function Home() {
@@ -9,6 +10,7 @@ function Home() {
       <Hero />
       <CategoriesCard />
       <Banner />
+      <Footer />
     </>
   );
 }
