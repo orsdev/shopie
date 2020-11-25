@@ -13,6 +13,120 @@
   font-size: 4rem;
 }
 
+.cart-menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 50;
+  cursor: pointer;
+}
+.cart-menu-container {
+  display: flex;
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+}
+.cart-menu-container-hide, .cart-menu-container-show {
+  height: 100%;
+}
+.cart-menu-container-hide {
+  background-color: transparent;
+}
+.cart-menu-container-show {
+  background-color: #e6eaee;
+  overflow-y: scroll;
+}
+.cart-menu-container-show-header {
+  background-color: white;
+  padding: 35px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 2px 4px 5px 0.1px gainsboro;
+}
+.cart-menu-container-show-header .fa {
+  font-size: 3rem;
+  cursor: pointer;
+}
+.cart-menu-container-show .btn {
+  font-size: 1.7rem;
+}
+.cart-menu-card {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  padding: 7% 0;
+  min-height: 120px;
+  max-height: fit-content;
+  align-items: center;
+  padding: 15px 10px;
+}
+.cart-menu-card:not(:last-child) {
+  margin-bottom: 10px;
+}
+.cart-menu-card img {
+  width: 25%;
+  height: auto;
+}
+.cart-menu-card-details {
+  width: 70%;
+  margin-left: 4%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.cart-menu-card-details-name {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.cart-menu-card-details p {
+  margin: 0;
+  margin-top: 10px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: red;
+}
+
+.cart-menu[display=hide] {
+  pointer-events: none;
+}
+.cart-menu[display=hide] .cart-menu-container {
+  transition: 1s;
+  opacity: 0;
+  visibility: hidden;
+}
+.cart-menu[display=hide] .cart-menu-container-show {
+  transition: 1s;
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+@media only screen and (min-width: 768px) {
+  .cart-menu-container-hide {
+    width: calc(100% - 500px);
+  }
+  .cart-menu-container-show {
+    width: 500px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .cart-menu-container-hide {
+    width: calc(100% - 400px);
+  }
+  .cart-menu-container-show {
+    width: 400px;
+  }
+}
+@media only screen and (max-width: 490px) {
+  .cart-menu-container-hide {
+    width: 50px;
+  }
+  .cart-menu-container-show {
+    width: calc(100% - 50px);
+  }
+}
 .header {
   max-width: 100%;
   position: relative;
