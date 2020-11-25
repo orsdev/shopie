@@ -397,7 +397,7 @@
   display: block;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 624px) {
   .product--grid {
     display: grid;
     grid-template-columns: 1fr;
