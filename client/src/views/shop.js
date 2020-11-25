@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { useDispatch, useSelector } from 'react-redux';
 import getProducts from '../redux/actions/product.action';
+import { addItemToCart } from '../redux/actions/cart.action';
 import CardSkeleton from '../components/cardSkeleton';
 
 function Shop() {
@@ -29,6 +30,11 @@ function Shop() {
     });
   }, []);
 
+  function addToCart(itemId) {
+    const findProduct = products.find((item) => item.id === itemId);
+    dispatch(addItemToCart(findProduct))
+  }
+
   return (
     <section className="shop container-fluid px-4" ref={sectionRef}>
       <h2 className="shop--header display-3 text-center">Shop</h2>
@@ -50,7 +56,10 @@ function Shop() {
                 <p className="product--name">{prod.title.substring(0, 40) + '..'}</p>
                 <p className="product--price">${prod.price}</p>
                 <p className="product--description">{prod.description.substring(0, 80) + '..'}</p>
-                <button type="button" className="btn product--cart-btn">
+                <button
+                  onClick={() => addToCart(prod.id)}
+                  type="button"
+                  className="btn product--cart-btn">
                   ADD TO CART
                   </button>
               </div>
