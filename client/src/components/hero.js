@@ -36,8 +36,8 @@ function Hero() {
           doloremque nobis delectus aliquam.
         </p>
         <Link
-          to="/shop
-          " className="btn btn-outline-light btn-lg mt-2"
+          to="/shop"
+          className="btn btn-outline-light btn-lg mt-2"
           type="button"
           ref={btnRef}>
           Shop Now

@@ -42,8 +42,8 @@ function Banner() {
         quos suscipit veritatis corrupti!
       </p>
       <Link
-        to="/shop
-          " className="banner--btn btn btn-danger btn-lg text-light py-3 px-4"
+        to="/shop"
+        className="banner--btn btn btn-danger btn-lg text-light py-3 px-4"
         type="button"
         ref={buttonRef}>
         Shop Now
