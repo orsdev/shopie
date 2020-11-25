@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import CartIcon from './cartIcon';
 
 const Header = () => {
@@ -13,9 +13,12 @@ const Header = () => {
       id="home">
       <nav>
         <h1 className="header--logo">
-          <a className="text-light" href="#home">
+          <Link
+            to="/"
+            className="text-light text-decoration-none"
+            type="button">
             Shopie
-          </a>
+        </Link>
         </h1>
         <ul>
           <li className="header--item">
