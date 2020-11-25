@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import CartIcon from './cartIcon';
 
 const Header = () => {
   const { pathname } = useLocation();
-  useEffect(() => { }, [pathname]);
 
   return (
     <header
