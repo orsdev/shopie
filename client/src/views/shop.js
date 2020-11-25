@@ -25,7 +25,7 @@ function Shop() {
       duration: 1.5,
       opacity: 0,
       ease: 'power3.easeOut',
-    })
+    });
   }, []);
 
   return (
