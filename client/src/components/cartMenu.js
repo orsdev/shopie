@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import toggleCart from '../redux/actions/toggleCart.action';
 
 const CartMenu = () => {
@@ -50,11 +51,12 @@ const CartMenu = () => {
               )}
           </div>
           {cartItems.length ? (
-            <button
+            <Link
+              to="/checkout"
               className="d-block my-5 w-75 mx-auto btn-dark btn-lg btn rounded-0 font-weight-bold py-3"
               type="button">
               Checkout
-            </button>
+            </Link>
           ) : null}
         </div>
       </div>
