@@ -14,6 +14,7 @@ function CategoriesCard() {
 
   useEffect(() => {
     dispatch(getCategories());
+    // eslint-disable-next-line
   }, []);
 
   return (
