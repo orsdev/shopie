@@ -230,7 +230,7 @@
   font-size: 1.8rem;
   width: 400px;
 }
-.hero--body button {
+.hero--body .btn {
   width: 120px;
   height: 40px;
   font-size: 1.8rem;
