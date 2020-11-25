@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { useDispatch, useSelector } from 'react-redux';
 import getProducts from '../redux/actions/product.action';
+import CardSkeleton from '../components/cardSkeleton';
 
 function Shop() {
   /*
@@ -31,6 +32,15 @@ function Shop() {
   return (
     <section className="shop container-fluid px-4" ref={sectionRef}>
       <h2 className="shop--header display-3 text-center">Shop</h2>
+      {!products ? (
+        <>
+          <div className="container w-75 mx-auto">
+            <div className="row">
+              <CardSkeleton counts={6} />
+            </div>
+          </div>
+        </>
+      ) : null}
       <div className="product--grid text-center">
         {
           products && products.map((prod) => {
