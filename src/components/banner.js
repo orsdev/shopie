@@ -6,6 +6,7 @@ function Banner() {
   const pRef = useRef(null);
   const buttonRef = useRef(null);
 
+  // Animation Effect
   useEffect(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
