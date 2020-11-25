@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Skeleton from 'react-loading-skeleton';
 
-function CardSkeleton() {
+function CardSkeleton({ counts }) {
   return (
     <>
       {
-        new Array(4).fill('cards').map((card, index) => {
+        new Array(counts).fill('cards').map((card, index) => {
           return (
             <div
               key={index + card}
@@ -20,6 +21,18 @@ function CardSkeleton() {
       }
     </>
   )
-}
+};
+
+CardSkeleton.defaultProps = {
+  counts: 4
+};
+
+
+CardSkeleton.propTypes = {
+  counts: PropTypes.number.isRequired
+};
+
+
+
 
 export default CardSkeleton;
