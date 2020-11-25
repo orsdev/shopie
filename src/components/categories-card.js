@@ -1,53 +1,46 @@
-import React from 'react';
-import Black from '../assets/images/black-widow.png';
-import Blue from '../assets/images/blue-gown.png';
-import Purse from '../assets/images/blue-purse.png';
-import Bag from '../assets/images/leather-brown.png';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import CardSkeleton from './cardSkeleton';
+import getCategories from '../redux/actions/categories.action';
 
 function CategoriesCard() {
+  /*
+   destructure & rename allCategories to categories
+   */
+  const { allCategories: categories } = useSelector(
+    (state) => state.categories,
+  );
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCategories());
+  }, []);
+
   return (
-    <>
-      <section className="categories-card px-2 my-0">
-        <div className="row my-0">
-          <div className="col-sm-6 col-md-6 col-lg-6 mb-md-5">
+    <section className="categories-card px-2 my-0">
+      <div className="row my-0">
+        {!categories ? <CardSkeleton /> : null}
+        {categories && categories.map((ctg) => (
+          <div
+            className="col-sm-6 col-md-6 col-lg-6 mb-md-5"
+            key={ctg.id}>
             <div className="card">
-              <img src={Black} className="card-img-top" alt="" />
+              <img
+                src={ctg.image}
+                className="card-img-top"
+                alt={ctg.category}
+              />
               <div className="card-body">
                 <h3 className="card-text text-danger">
-                  Men Clothing
+                  {ctg.category}
                 </h3>
               </div>
             </div>
           </div>
-          <div className="col-sm-6 col-md-6 col-lg-6 mb-md-5">
-            <div className="card">
-              <img src={Blue} className="card-img-top" alt="" />
-              <div className="card-body">
-                <h3 className="card-text text-danger">Jeweries</h3>
-              </div>
-            </div>
-          </div>
-          <div className="col-sm-6 col-md-6 col-lg-6">
-            <div className="card">
-              <img src={Purse} className="card-img-top" alt="" />
-              <div className="card-body">
-                <h3 className="card-text text-danger">
-                  Women Clothing
-                </h3>
-              </div>
-            </div>
-          </div>
-          <div className="col-sm-6 col-md-6 col-lg-6">
-            <div className="card">
-              <img src={Bag} className="card-img-top" alt="" />
-              <div className="card-body">
-                <h3 className="card-text text-danger">Electronics</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
+        ))}
+
+      </div>
+    </section>
   );
 }
 
