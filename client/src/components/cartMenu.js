@@ -52,6 +52,7 @@ const CartMenu = () => {
           </div>
           {cartItems.length ? (
             <Link
+              onClick={hideCart}
               to="/checkout"
               className="d-block my-5 w-75 mx-auto btn-dark btn-lg btn rounded-0 font-weight-bold py-3"
               type="button">
