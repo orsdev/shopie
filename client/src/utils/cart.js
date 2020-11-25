@@ -21,14 +21,16 @@ export const clearItemFromCart = (itemToBeClearId, cartItems) => {
 
 export const reduceItemQty = (itemId, cartItems) => {
   const existingItem = cartItems.find(item => item.id === itemId);
-  if (existingItem.quantityInCart === 1) {
-    return cartItems.filter(item => itemId !== item.id)
+  let newCartItems;
+  if (existingItem.quantityInCart > 1) {
+    newCartItems = cartItems.map(item => {
+      const newQuantity = existingItem.quantityInCart - 1;
+      return (
+        item.id === itemId ? { ...item, quantityInCart: newQuantity } : item
+      )
+    })
+    return newCartItems;
+  } else {
+    return cartItems;
   }
-  const newCartItems = cartItems.map(item => {
-    const newQuantity = existingItem.quantityInCart - 1;
-    return (
-      item.id === itemId ? { ...item, quantityInCart: newQuantity } : item
-    )
-  })
-  return newCartItems;
 }
