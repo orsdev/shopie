@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 import { useDispatch, useSelector } from 'react-redux';
 import getProducts from '../redux/actions/product.action';
 
@@ -10,14 +11,25 @@ function Shop() {
     (state) => state.products,
   );
   const dispatch = useDispatch();
+  const sectionRef = useRef(null);
 
   useEffect(() => {
     dispatch(getProducts());
     // eslint-disable-next-line
   }, []);
 
+  // Animation Effect
+  useEffect(() => {
+    const tl = gsap.timeline();
+    tl.from(sectionRef.current, {
+      duration: 1.5,
+      opacity: 0,
+      ease: 'power3.easeOut',
+    })
+  }, []);
+
   return (
-    <section className="shop container-fluid px-4">
+    <section className="shop container-fluid px-4" ref={sectionRef}>
       <h2 className="shop--header display-3 text-center">Shop</h2>
       <div className="product--grid text-center">
         {
