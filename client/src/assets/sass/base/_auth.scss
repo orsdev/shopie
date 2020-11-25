@@ -1,0 +1,96 @@
+.authenticate {
+  position: relative;
+  top: 130px;
+  margin-bottom: 100px;
+
+  .form {
+    flex: 1;
+    padding: 10px 30px;
+    width: 600px;
+    margin: auto;
+  }
+
+  .form-register {
+    width: 100%;
+    margin: auto;
+    text-align: right;
+  }
+  .form-register span {
+    font-size: 1.3rem;
+  }
+  .form-register span strong {
+    position: relative;
+    display: inline-block;
+    font-size: 1.4rem;
+    color: orangered;
+    font-weight: 600;
+    cursor: pointer;
+    z-index: 20;
+    margin-left: 4px;
+  }
+  .form-group {
+    position: relative;
+    width: 100%;
+  }
+  .form-group label {
+    position: relative;
+    top: 15px;
+    left: 10px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    background: #fff;
+  }
+  .form-group input {
+    width: 100%;
+    padding: 15px 5px;
+    border: 1px solid lightgray;
+    font-size: 2rem;
+  }
+  .form button {
+    width: 100%;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    background: rgba(13, 46, 58, 0.8);
+    height: 50px;
+    padding: 5px;
+    border: none;
+    border: 1px solid rgba(14, 46, 58, 0.5);
+  }
+  .form button:hover {
+    background: rgba(14, 46, 58, 0.6);
+  }
+
+  .form button:focus {
+    outline: none;
+  }
+  .form button[disabled] {
+    color: #c0c0c0;
+    background-color: white;
+    cursor: not-allowed;
+    pointer-events: none;
+    border: 1px solid #999999;
+  }
+
+  @media (max-width: 680px) {
+    .form {
+      width: 90%;
+    }
+  }
+  @media (max-width: 450px) {
+    .form {
+      width: 98%;
+    }
+    .form .display-4 {
+      font-size: 2.5rem;
+    }
+    .form-register {
+      text-align: center;
+    }
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+}
