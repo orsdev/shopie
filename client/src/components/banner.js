@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 
 function Banner() {
@@ -40,12 +41,13 @@ function Banner() {
         blanditiis autem amet quidem voluptatem voluptatibus fugit
         quos suscipit veritatis corrupti!
       </p>
-      <button
-        ref={buttonRef}
-        className="banner--btn btn btn-danger btn-lg text-light py-3 px-4"
-        type="button">
-        SHOP NOW
-      </button>
+      <Link
+        to="/shop
+          " className="banner--btn btn btn-danger btn-lg text-light py-3 px-4"
+        type="button"
+        ref={buttonRef}>
+        Shop Now
+        </Link>
     </section>
   );
 }
