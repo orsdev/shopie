@@ -1,9 +1,11 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { useLocation, Link } from 'react-router-dom';
 import CartIcon from './cartIcon';
 
-const Header = () => {
+const Header = ({ logOut }) => {
   const { pathname } = useLocation();
+  const { user } = useSelector((state) => state.user);
 
   return (
     <header
@@ -17,16 +19,27 @@ const Header = () => {
             className="text-light text-decoration-none"
             type="button">
             Shopie
-        </Link>
+          </Link>
         </h1>
         <ul>
           <li className="header--item">
-            <p className="username text-light font-weight-bold h4 d-none">
-              Hi, Samuel
-            </p>
-            <p className="auth text-light font-weight-bold h4">
-              Log in / Sign up
-            </p>
+            {user ? (
+              <>
+                <p
+                  onClick={logOut}
+                  className="auth font-weight-bold h4 my-0 text-light d-inline-block ml-2">
+                  Logout
+              </p>
+              </>
+            ) :
+              (<Link
+                to="/auth"
+                className="auth font-weight-bold h4 text-light text-decoration-none"
+                type="button">
+                Log in / Sign up
+              </Link>
+              )
+            }
           </li>
           <li className="header--item header--cart">
             <CartIcon />
