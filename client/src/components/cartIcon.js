@@ -24,7 +24,10 @@ function CartIcon() {
           fill="white"
         />
       </svg>
-      <span className="badge badge-danger cart-badge">{cartItems.length ? cartItems.length : ''}</span>
+      <span
+        className="badge badge-danger cart-badge">
+        {cartItems.length ? cartItems.length : ''}
+      </span>
     </>
   )
 }
