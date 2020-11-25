@@ -1,13 +1,14 @@
 .header {
   max-width: 100%;
-  position: relative;
+  position: fixed;
+  top: 0;
   height: 85px;
   display: flex;
   z-index: 5;
   align-items: center;
 
   &--light {
-    background: transparent;
+    background: rgba(13, 46, 58, 0.5);
   }
 
   &--dark {
