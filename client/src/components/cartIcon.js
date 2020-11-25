@@ -1,8 +1,9 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import toggleCart from '../redux/actions/toggleCart.action';
 
 function CartIcon() {
+  const { cartItems } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
   function showCart() {
@@ -23,7 +24,7 @@ function CartIcon() {
           fill="white"
         />
       </svg>
-      <span className="badge badge-danger cart-badge">3</span>
+      <span className="badge badge-danger cart-badge">{cartItems.length ? cartItems.length : ''}</span>
     </>
   )
 }
