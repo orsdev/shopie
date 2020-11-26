@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { auth } from '../firebaseConfig';
 
 function Signup({ showLoginForm }) {
@@ -8,6 +8,7 @@ function Signup({ showLoginForm }) {
     password: ''
   });
   const [authError, setAuthError] = useState(null);
+  const buttonRef = useRef();
 
   function onInputChange(e) {
     setFormData({
@@ -19,23 +20,32 @@ function Signup({ showLoginForm }) {
   async function onSubmit(e) {
     e.preventDefault();
 
+    buttonRef.current.disabled = true;
+    buttonRef.current.firstElementChild.style.display = "block";
+
     const { username, email, password } = formData;
     if (username && email && password) {
       try {
         auth.createUserWithEmailAndPassword(email, password)
           .then(function (result) {
             setAuthError(null);
+            buttonRef.current.disabled = false;
+            buttonRef.current.firstElementChild.style.display = "none";
             return result.user.updateProfile({
               displayName: username
             })
           }).catch(function (error) {
             if (error.message) {
               setAuthError(error.message);
+              buttonRef.current.disabled = false;
+              buttonRef.current.firstElementChild.style.display = "none";
             }
           })
       } catch (error) {
         if (error.message) {
           setAuthError(error.message);
+          buttonRef.current.disabled = false;
+          buttonRef.current.firstElementChild.style.display = "none";
         }
       }
     } else {
@@ -96,8 +106,11 @@ function Signup({ showLoginForm }) {
             />
           </div>
           <div className="form-group">
-            <button type="submit">
+            <button
+              ref={buttonRef}
+              type="submit">
               REGISTER
+                <div className="css-loader"></div>
             </button>
           </div>
           <div className="form-register">
