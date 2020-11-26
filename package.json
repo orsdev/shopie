@@ -6,12 +6,18 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-sslify": "^1.2.0",
     "morgan": "^1.10.0",
+    "nodemon": "^2.0.6",
     "stripe": "^8.126.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "client": "cd client && npm start",
+    "server": "nodemon server.js",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
