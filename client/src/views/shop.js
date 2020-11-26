@@ -16,7 +16,9 @@ function Shop() {
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    dispatch(getProducts());
+    if (!products) {
+      dispatch(getProducts());
+    }
     // eslint-disable-next-line
   }, []);
 
