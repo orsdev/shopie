@@ -14,6 +14,12 @@ export const clearItem = (itemId) => {
   })
 }
 
+export const clearAllCartItems = () => {
+  return ({
+    type: actionTypes.CLEAR_ALL_ITEM
+  })
+}
+
 export const reduceItemQty = (itemId) => ({
   type: actionTypes.REDUCE_ITEM,
   payload: itemId

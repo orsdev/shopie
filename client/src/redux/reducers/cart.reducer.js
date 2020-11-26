@@ -17,6 +17,11 @@ const Cart = (state = initialState, action) => {
         ...state,
         cartItems: clearItemFromCart(action.payload, state.cartItems)
       })
+    case actionTypes.CLEAR_ALL_ITEM:
+      return ({
+        ...state,
+        cartItems: []
+      })
     case actionTypes.REDUCE_ITEM:
       return ({
         ...state,
