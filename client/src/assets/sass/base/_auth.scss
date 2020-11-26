@@ -47,6 +47,9 @@
     font-size: 2rem;
   }
   .form button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     font-size: 2rem;
     font-weight: 600;
