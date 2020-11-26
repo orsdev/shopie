@@ -2,6 +2,10 @@
   "name": "shopie",
   "version": "1.0.0",
   "main": "server.js",
+  "private": true,
+  "engines": {
+    "node": "12.18.1"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
